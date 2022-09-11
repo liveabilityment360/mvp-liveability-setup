@@ -1,0 +1,31 @@
+export PROJECT_ID="mvp-liveability-setup-alpha"
+   
+gcloud config set project ${PROJECT_ID}
+
+git clone https://github.com/liveabilityment360/mvp-liveability-setup
+
+cd mvp-liveability-setup
+
+bash initial_setup.sh
+
+Username for github =liveabilityment360
+password=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
+
+
+terraform
+----------
+cd terraform
+bash terraform_setup.sh
+
+datastream
+----------
+cd ..
+cd datastream
+bash datastream_setup.sh
+
+Now run dataflow
+--------------------
+cd ..
+cd dataflow
+bash dataflow_run.sh
+
