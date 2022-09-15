@@ -1,5 +1,5 @@
 #1.create a project and export it into a variable(project creation- manual)
-export PROJECT_ID="mvp-liveability-setup-alpha"
+export PROJECT_ID="proj-liveability"
       
 #2.Sets the project,location &dataset
 gcloud config set project ${PROJECT_ID}
@@ -10,15 +10,18 @@ export BQ_DATASET="liveability"
 
 ############################# For data flow start ########################################################
 cd dataflow
-export GOOGLE_APPLICATION_CREDENTIALS=../key.json
+#export GOOGLE_APPLICATION_CREDENTIALS=../key.json
+#export GOOGLE_APPLICATION_CREDENTIALS= gs://${PROJECT_ID}/json_key/key.json
+gsutil cp gs://${PROJECT_ID}/json_key/key.json .
+export GOOGLE_APPLICATION_CREDENTIALS=key.json
 
 #28.Move the schema file to the current folder
 cp ~/final_demo/schema/*.csv .
 
 #29.Create virtual environment
 python3 -m pip install --user virtualenv
-virtualenv -p python3 virenv
-source virenv/bin/activate
+virtualenv -p python3 venv
+source venv/bin/activate
 
 #30.Install the required libraries
 pip install -r requirements.txt
