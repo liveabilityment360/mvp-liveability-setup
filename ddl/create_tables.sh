@@ -3,10 +3,13 @@ export PROJECT_ID="liveability-final"
 gcloud config set project ${PROJECT_ID}
 export LOCATION="australia-southeast1"
 
-export GOOGLE_APPLICATION_CREDENTIALS=../key.json
+#export GOOGLE_APPLICATION_CREDENTIALS=../key.json
 #export GOOGLE_APPLICATION_CREDENTIALS= gs://${PROJECT_ID}/json_key/key.json
 #gsutil cp gs://${PROJECT_ID}/json_key/key.json .
 #export GOOGLE_APPLICATION_CREDENTIALS=key.json
+#Sets the keypath
+export KEY_PATH="gs://${PROJECT_ID}/credentials/key.json"
+export GOOGLE_APPLICATION_CREDENTIALS=${KEY_PATH}
 
 export MYSQL_INSTANCE="aus-liveability-demo-mysql"
 
