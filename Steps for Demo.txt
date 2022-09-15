@@ -1,23 +1,19 @@
-export PROJECT_ID="mvp-liveability-setup"
-   
-gcloud config set project ${PROJECT_ID}
+#1.Open cloud shell  and export and set the project
 
+export PROJECT_ID="liveability-final"   
+gcloud config set project ${PROJECT_ID}
 git clone https://github.com/liveabilityment360/mvp-liveability-setup
 
-cd mvp-liveability-setup
+#2.bash to create service account for cloud build
 
-bash initial_setup.sh
+bash CloudBuild_SvcAccount_Setup.sh
+
+#3.Create trigger for intial setup
+#4. Create trigger for terraform
+#5.create trigger for tables
+#6.create trigger for datastream
 
 
-Create trigger for terraform
-create trigger for table creation
-
-
-datastream
-----------
-
-cd datastream
-bash datastream_setup.sh
 
 Now run dataflow
 --------------------
@@ -28,13 +24,20 @@ bash dataflow_run.sh
 
 
 
+Username for github =liveabilityment360
+password=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
+
+
 terraform
 ----------
 cd terraform
 bash terraform_setup.sh
 
 
+datastream
+----------
+
+cd datastream
+bash datastream_setup.sh
 
 
-Username for github =liveabilityment360
-password=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
