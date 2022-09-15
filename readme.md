@@ -1,4 +1,5 @@
 #1.Open cloud shell  and export and set the project
+--------------------------------------------------
 
 export PROJECT_ID="liveability-final"   
 gcloud config set project ${PROJECT_ID}
