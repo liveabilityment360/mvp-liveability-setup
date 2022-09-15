@@ -1,5 +1,5 @@
 steps:
-- id: 'branch name' 
+- id: 'terraform' 
   name: 'alpine'
   entrypoint: 'sh'
   args:
