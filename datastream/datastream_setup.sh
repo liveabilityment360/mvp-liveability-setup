@@ -9,11 +9,11 @@ export MYSQL_USER="datastream"
 export MYSQL_PASS="12345678"
 
 #Parameters for the Datastream Connection Profile generation.
-export MYSQL_CONN_PROFILE="liveability-mysql-cp"
-export GCS_CONN_PROFILE="liveability-gcs-cp"
+export MYSQL_CONN_PROFILE="liveability-mysql-conprofile"
+export GCS_CONN_PROFILE="liveability-gcs-conprofile"
 export GCS_DS_PATH_PREFIX="/data/stream_data/"
-export DS_PUBSUB_TOPIC="liveability-topic"
-export DS_PUBSUB_SUBSCRIPTION="liveability-subscription"
+export DS_PUBSUB_TOPIC="liveability-pubsub-topic"
+export DS_PUBSUB_SUBSCRIPTION="liveability-pubsub-subscription"
 export DS_DIR_PATH="data/stream_data/"
 export Dataflow_REPLICATION="liveability-dataflow-replication"
 
