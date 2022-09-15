@@ -1,5 +1,5 @@
 
-export PROJECT_ID="mvp-liveability-setup"
+export PROJECT_ID="liveability-final"
 gcloud config set project ${PROJECT_ID}
 export LOCATION="australia-southeast1"
 
