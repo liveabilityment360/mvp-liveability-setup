@@ -5,7 +5,7 @@ gcloud config set project ${PROJECT_ID}
 git clone https://github.com/liveabilityment360/mvp-liveability-setup
 
 #2.bash to create service account for cloud build
-
+cd mvp-liveability-setup
 bash CloudBuild_SvcAccount_Setup.sh
 
 #3.Create trigger for intial setup
