@@ -3,10 +3,10 @@ export PROJECT_ID="mvp-liveability-setup"
 gcloud config set project ${PROJECT_ID}
 export LOCATION="australia-southeast1"
 
-#export GOOGLE_APPLICATION_CREDENTIALS=../key.json
+export GOOGLE_APPLICATION_CREDENTIALS=../key.json
 #export GOOGLE_APPLICATION_CREDENTIALS= gs://${PROJECT_ID}/json_key/key.json
-gsutil cp gs://${PROJECT_ID}/json_key/key.json .
-export GOOGLE_APPLICATION_CREDENTIALS=key.json
+#gsutil cp gs://${PROJECT_ID}/json_key/key.json .
+#export GOOGLE_APPLICATION_CREDENTIALS=key.json
 
 export MYSQL_INSTANCE="aus-liveability-demo-mysql"
 
