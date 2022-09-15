@@ -8,10 +8,10 @@ git clone https://github.com/liveabilityment360/mvp-liveability-setup
 cd mvp-liveability-setup
 bash CloudBuild_SvcAccount_Setup.sh
 
-#3.Create trigger for intial setup
-#4. Create trigger for terraform
-#5.create trigger for tables
-#6.create trigger for datastream
+#3.Create trigger for intial setup. Use "initial_account_setup_cloudbuild.yaml"
+#4. Create trigger for terraform. "Use terraform-cloudbuild.yaml"
+#5.create trigger for tables.Use "ddl_cloudbuild.yaml"
+#6.create trigger for datastream. Use "datastream_cloudbuild.yaml"
 
 till here we will be setting up before the demo
 
