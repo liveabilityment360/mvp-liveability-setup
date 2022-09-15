@@ -11,7 +11,7 @@ export LOCATION="australia-southeast1"
 export KEY_PATH="gs://${PROJECT_ID}/credentials/key.json"
 export GOOGLE_APPLICATION_CREDENTIALS=${KEY_PATH}
 
-export MYSQL_INSTANCE="aus-liveability-demo-mysql"
+export MYSQL_INSTANCE="liveability-mysql-instance"
 
 #Datastream user creation replica process and allowing privilleges for the 'datastream' user.
 SERVICE_ACCOUNT=$(gcloud sql instances describe ${MYSQL_INSTANCE} | grep serviceAccountEmailAddress | awk '{print $2;}')
