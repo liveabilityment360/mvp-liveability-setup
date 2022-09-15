@@ -13,7 +13,14 @@ bash CloudBuild_SvcAccount_Setup.sh
 #5.create trigger for tables
 #6.create trigger for datastream
 
+till here we will be setting up before the demo
 
+In demo
+----------
+1.Click the trigger for inital setup
+2, click the trigger for terraform
+3.click the trigger for table creation
+4. Click the trigger for datastream
 
 Now run dataflow
 --------------------
@@ -21,7 +28,10 @@ cd ..
 cd dataflow
 bash dataflow_run.sh
 
-
+Then in the already set up project
+--------------------
+show DBT, datastudio and geoviz
+Then show the result in app sheet too
 
 
 Username for github =liveabilityment360
