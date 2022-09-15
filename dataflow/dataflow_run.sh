@@ -1,5 +1,5 @@
 #1.create a project and export it into a variable(project creation- manual)
-export PROJECT_ID="mvp-liveability-setup"
+export PROJECT_ID="liveability-final"
       
 #2.Sets the project,location &dataset
 gcloud config set project ${PROJECT_ID}
