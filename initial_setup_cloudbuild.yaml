@@ -22,7 +22,7 @@ steps:
     - '-c'
     - |-
        if [ -d "setup/" ]; then
-        cd scripts
+        cd setup
         echo "*************** INITIAL SET UP ******************"
         echo "******* At environment: ********"
         echo "*************************************************"
