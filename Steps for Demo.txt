@@ -22,9 +22,8 @@ In demo
 3.click the trigger for table creation
 4. Click the trigger for datastream
 
-Now run dataflow
---------------------
-Now run dataflow
+
+Now run dataflow (not able to figure out how to use cloud composer to trigger till now)
 --------------------
 cd ..
 cd mvp-liveability-setup
