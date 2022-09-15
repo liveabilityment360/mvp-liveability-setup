@@ -7,7 +7,6 @@ export LOCATION="australia-southeast1"
 export BQ_DATASET="liveability"
 
 
-
 ############################# For data flow start ########################################################
 cd dataflow
 #export GOOGLE_APPLICATION_CREDENTIALS=../key.json
