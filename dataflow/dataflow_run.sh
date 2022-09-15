@@ -12,8 +12,11 @@ export BQ_DATASET="liveability"
 cd dataflow
 #export GOOGLE_APPLICATION_CREDENTIALS=../key.json
 #export GOOGLE_APPLICATION_CREDENTIALS= gs://${PROJECT_ID}/json_key/key.json
-gsutil cp gs://${PROJECT_ID}/json_key/key.json .
-export GOOGLE_APPLICATION_CREDENTIALS=key.json
+#gsutil cp gs://${PROJECT_ID}/json_key/key.json .
+#export GOOGLE_APPLICATION_CREDENTIALS=key.json
+#Sets the keypath
+export KEY_PATH="gs://${PROJECT_ID}/credentials/key.json"
+export GOOGLE_APPLICATION_CREDENTIALS=${KEY_PATH}
 
 #28.Move the schema file to the current folder
 cp ~/final_demo/schema/*.csv .
