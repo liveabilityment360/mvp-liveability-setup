@@ -88,9 +88,9 @@ bq --location=${LOCATION} mk \
 #git clone ${Git_Root}
 
 #11. Copy the files to cloud storage
-gsutil cp ~/final_demo/data/* gs://${PROJECT_ID}/data/batch_data/
-gsutil cp ~/final_demo/ddl/* gs://${PROJECT_ID}/ddl/
-gsutil cp ~/final_demo/key.json gs://${PROJECT_ID}/json_key/
+gsutil cp ~/mvp_liveability_setup/data/* gs://${PROJECT_ID}/data/batch_data/
+gsutil cp ~/mvp_liveability_setup/ddl/* gs://${PROJECT_ID}/ddl/
+gsutil cp ~/mvp_liveability_setup/key.json gs://${PROJECT_ID}/json_key/
 
 
 ############################# For data flow start ########################################################
