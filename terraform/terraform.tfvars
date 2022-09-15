@@ -1,1 +1,1 @@
-gcp_project= "proj-liveability"
+gcp_project= "mvp-liveability-setup-alpha"
