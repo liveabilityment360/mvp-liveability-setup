@@ -37,4 +37,4 @@ bash terraform_setup.sh
 
 
 Username for github =liveabilityment360
-password=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
+password=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
