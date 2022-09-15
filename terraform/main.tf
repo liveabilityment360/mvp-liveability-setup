@@ -22,7 +22,7 @@ provider "google" {
   
 
 resource "google_sql_database_instance" "instance-mysql" {
-  name             = "aus-liveability-demo-mysql"
+  name             = "liveability-mysql-instance"
   region           = var.gcp_region
   database_version = "MYSQL_8_0"
   settings {
