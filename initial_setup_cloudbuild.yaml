@@ -23,7 +23,7 @@ steps:
     - |-
        if [ -d "setup/" ]; then
         cd scripts
-        echo "*************** INITIAL DATA LOADING ******************"
+        echo "*************** INITIAL SET UP ******************"
         echo "******* At environment: ********"
         echo "*************************************************"
        fi
