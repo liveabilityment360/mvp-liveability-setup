@@ -1,11 +1,11 @@
 #1.create a project and export it into a variable(project creation- manual)
-export PROJECT_ID="mvp-liveability-setup-alpha"
+export PROJECT_ID="proj-liveability"
       
 #2.Sets the project,location &dataset
 gcloud config set project ${PROJECT_ID}
 export LOCATION="australia-southeast1"
 export BQ_DATASET="liveability"
-#export Git_Root="https://github.com/liveabilityment360/mvp-liveability-setup"
+export Git_Root="https://github.com/liveabilityment360/final_demo"
 
 #3.Create the service account with same proj name and export it to a variable which can be used in later stages    
 gcloud iam service-accounts create ${PROJECT_ID} \
@@ -85,11 +85,12 @@ bq --location=${LOCATION} mk \
 	 --dataset ${BQ_DATASET} 
 
 #10.Clone the data and schema from git to cloud shell
-#git clone ${Git_Root}
+git clone ${Git_Root}
 
 #11. Copy the files to cloud storage
 gsutil cp ~/final_demo/data/* gs://${PROJECT_ID}/data/batch_data/
 gsutil cp ~/final_demo/ddl/* gs://${PROJECT_ID}/ddl/
+gsutil cp ~/final_demo/key.json gs://${PROJECT_ID}/json_key/
 
 
 ############################# For data flow start ########################################################

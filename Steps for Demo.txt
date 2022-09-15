@@ -1,10 +1,10 @@
-export PROJECT_ID="mvp-liveability-setup-alpha"
+export PROJECT_ID="proj-liveability"
    
 gcloud config set project ${PROJECT_ID}
 
-git clone https://github.com/liveabilityment360/mvp-liveability-setup
+git clone https://github.com/liveabilityment360/final_demo
 
-cd mvp-liveability-setup
+cd final_demo
 
 bash initial_setup.sh
 
