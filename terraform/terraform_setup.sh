@@ -12,7 +12,7 @@ export KEY_PATH="gs://${PROJECT_ID}/credentials/key.json"
 export GOOGLE_APPLICATION_CREDENTIALS=${KEY_PATH}
 
 
-export MYSQL_INSTANCE="aus-liveability-demo-mysql"
+export MYSQL_INSTANCE="liveability-mysql-instance"
 
 #12.Create the SQL instance using terraform
 terraform init
