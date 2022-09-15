@@ -24,7 +24,10 @@ In demo
 
 Now run dataflow
 --------------------
+Now run dataflow
+--------------------
 cd ..
+cd mvp-liveability-setup
 cd dataflow
 bash dataflow_run.sh
 
@@ -34,20 +37,11 @@ show DBT, datastudio and geoviz
 Then show the result in app sheet too
 
 
+If the git clone asks for username and pwd
+-----------------------------------------
 Username for github =liveabilityment360
 password=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
 
 
-terraform
-----------
-cd terraform
-bash terraform_setup.sh
-
-
-datastream
-----------
-
-cd datastream
-bash datastream_setup.sh
 
 
