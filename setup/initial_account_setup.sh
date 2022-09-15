@@ -86,6 +86,6 @@ bq --location=${LOCATION} mk \
 	 --dataset ${BQ_DATASET}   
 
 #Copy the files to cloud storage
-gsutil cp data/* gs://${PROJECT_ID}/data/batch_data/
-gsutil cp ddl/* gs://${PROJECT_ID}/ddl/
+gsutil cp ../data/* gs://${PROJECT_ID}/data/batch_data/
+gsutil cp ../ddl/* gs://${PROJECT_ID}/ddl/
 gsutil cp key.json gs://${PROJECT_ID}/credentials/key.json
