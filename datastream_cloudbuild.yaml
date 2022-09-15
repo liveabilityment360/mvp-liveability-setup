@@ -1,5 +1,5 @@
 steps:
-- id: 'branch name'
+- id: 'data stream'
   name: 'alpine'
   entrypoint: 'sh'
   args:
