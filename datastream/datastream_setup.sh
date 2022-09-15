@@ -1,4 +1,4 @@
-export PROJECT_ID="proj-liveability"
+export PROJECT_ID="mvp-liveability-setup-alpha"
 # Set the project.
 gcloud config set project ${PROJECT_ID}
 
