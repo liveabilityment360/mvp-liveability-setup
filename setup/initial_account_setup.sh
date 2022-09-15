@@ -78,7 +78,6 @@ gcloud app create --region=${LOCATION}
 #Creates the fire store for the Batch data processing
 gcloud firestore databases create --region=${LOCATION}
 gcloud firestore databases update --type=firestore-native
-
 #Create bucket in cloud storage
 gsutil mb -l ${LOCATION} gs://${PROJECT_ID}
 
