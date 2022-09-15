@@ -1,5 +1,5 @@
 steps:
-- id: 'branch name'
+- id: 'Table creation'
   name: 'alpine'
   entrypoint: 'sh'
   args:
