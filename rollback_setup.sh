@@ -61,5 +61,3 @@ gsutil rb -f "gs://${PROJECT_ID}"
 # To remove the service accounts we have.
 gcloud iam service-accounts delete ${SERVICE_ACCOUNT_ID}@${PROJECT_ID}.iam.gserviceaccount.com
 
-# Remove the project itself
-#gcloud projects delete "${PROJECT_ID}"
