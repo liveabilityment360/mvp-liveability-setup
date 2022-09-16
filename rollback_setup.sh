@@ -1,5 +1,8 @@
 # Scripts for rolling back the project resources.
 export PROJECT_ID="liveability-final"
+# Sets the project in the shell
+gcloud config set project ${PROJECT_ID}
+
 export LOCATION="australia-southeast1"
 export SERVICE_ACCOUNT_ID="sa-liveability-final"
 
@@ -27,8 +30,7 @@ export DS_TARGET_JSON="gcs_destination_user_activities_config.json"
 
 export BQ_DATASET="liveability"
 
-# Sets the project in the shell
-gcloud config set project ${PROJECT_ID}
+
 
 # Cancelling Dataflow job
 gcloud dataflow jobs cancel ${DS_DATAFLOW_REPLICATION} --force --region=${LOCATION}
