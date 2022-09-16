@@ -14,7 +14,7 @@ export KEY_PATH="gs://${PROJECT_ID}/credentials/key.json"
 export GOOGLE_APPLICATION_CREDENTIALS=${KEY_PATH}
 
 #28.Move the schema file to the current folder
-cp ../mvp-liveability-setup/schema/*.csv .
+cp ../schema/*.csv .
 
 #29.Create virtual environment
 python3 -m pip install --user virtualenv
