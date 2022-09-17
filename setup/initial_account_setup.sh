@@ -88,5 +88,5 @@ bq --location=${LOCATION} mk \
 #Copy the files to cloud storage
 gsutil cp ../data/* gs://${PROJECT_ID}/data/batch_data/
 gsutil cp ../ddl/* gs://${PROJECT_ID}/ddl/
-gsutil cp ../data/comp_schema/* gs://${PROJECT_ID}/data/comp_schema/
+gsutil cp ../comp_schema/* gs://${PROJECT_ID}/data/comp_schema/
 gsutil cp key.json gs://${PROJECT_ID}/credentials/key.json
