@@ -7,11 +7,15 @@ export LOCATION="australia-southeast1"
 export BQ_DATASET="liveability"
 
 
-
 ############################# For data flow start ########################################################
-#Sets the keypath
-export KEY_PATH="gs://${PROJECT_ID}/credentials/key.json"
-export GOOGLE_APPLICATION_CREDENTIALS=${KEY_PATH}
+cd dataflow
+
+gsutil cp gs://${PROJECT_ID}/credentials/key.json .
+export GOOGLE_APPLICATION_CREDENTIALS=key.json
+
+#28.Move the schema file to the current folder
+#cp ~/final_demo/schema/*.csv .
+
 
 #28.Move the schema file to the current folder
 cp ../schema/*.csv .
