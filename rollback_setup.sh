@@ -30,7 +30,27 @@ export DS_TARGET_JSON="gcs_destination_user_activities_config.json"
 
 export BQ_DATASET="liveability"
 
-
+#Disable APIs 
+# dataflow 
+gcloud services disable dataflow.googleapis.com --force
+gcloud services disable datapipelines.googleapis.com --force 
+gcloud services disable cloudscheduler.googleapis.com --force
+#firestore
+gcloud services disable firestore.googleapis.com --force
+#appengine for firestore
+gcloud services disable appengine.googleapis.com --force
+#cloud sql
+gcloud services disable sqladmin.googleapis.com --force 
+#datastream
+gcloud services disable datastream.googleapis.com --force 
+#pubsubapi
+gcloud services disable pubsub.googleapis.com --force 
+#cloudbuild
+gcloud services disable cloudbuild.googleapis.com --force 
+gcloud services disable compute.googleapis.com --force 
+gcloud services disable iam.googleapis.com --force 
+#cloud composer
+gcloud services disable composer.googleapis.com --force 
 
 # Cancelling Dataflow job
 gcloud dataflow jobs cancel ${DS_DATAFLOW_REPLICATION} --force --region=${LOCATION}
