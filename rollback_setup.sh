@@ -30,6 +30,34 @@ export DS_TARGET_JSON="gcs_destination_user_activities_config.json"
 
 export BQ_DATASET="liveability"
 
+# Cancelling Dataflow job
+gcloud dataflow jobs cancel ${DS_DATAFLOW_REPLICATION} --force --region=${LOCATION}
+
+# Rollback the Datastream set up
+gcloud datastream streams delete ${DS_MYSQL_GCS_NAME} --location=${LOCATION}
+gcloud datastream connection-profiles delete ${GCS_CONN_PROFILE} --location=${LOCATION}
+gcloud datastream connection-profiles delete ${MYSQL_CONN_PROFILE} --location=${LOCATION}
+
+# Removes the pubsub notification on GCS bucket.
+gsutil notification delete projects/_/buckets/${PROJECT_ID}/notificationConfigs/*
+
+# Removes the pubsub topic and subsctiption.
+gcloud pubsub subscriptions delete ${DS_PUBSUB_SUBSCRIPTION}
+gcloud pubsub topics delete ${DS_PUBSUB_TOPIC}
+
+# Delete the cloud sql instance
+gcloud sql instances delete ${MYSQL_INSTANCE}
+
+#Delete BigQuery dataset
+bq rm -r -f "liveability
+
+#Clean up the GCS bucket and its contents.
+gsutil rm -r "gs://${PROJECT_ID}"
+gsutil rb -f "gs://${PROJECT_ID}"
+
+# To remove the service accounts we have.
+gcloud iam service-accounts delete ${SERVICE_ACCOUNT_ID}@${PROJECT_ID}.iam.gserviceaccount.com
+
 #Disable APIs 
 # dataflow 
 gcloud services disable dataflow.googleapis.com --force
@@ -52,32 +80,4 @@ gcloud services disable iam.googleapis.com --force
 #cloud composer
 gcloud services disable composer.googleapis.com --force 
 
-# Cancelling Dataflow job
-gcloud dataflow jobs cancel ${DS_DATAFLOW_REPLICATION} --force --region=${LOCATION}
-
-# Rollback the Datastream set up
-gcloud datastream streams delete ${DS_MYSQL_GCS_NAME} --location=${LOCATION}
-gcloud datastream connection-profiles delete ${GCS_CONN_PROFILE} --location=${LOCATION}
-gcloud datastream connection-profiles delete ${MYSQL_CONN_PROFILE} --location=${LOCATION}
-
-# Removes the pubsub notification on GCS bucket.
-gsutil notification delete projects/_/buckets/${PROJECT_ID}/notificationConfigs/*
-
-# Removes the pubsub topic and subsctiption.
-gcloud pubsub subscriptions delete ${DS_PUBSUB_SUBSCRIPTION}
-gcloud pubsub topics delete ${DS_PUBSUB_TOPIC}
-
-# Delete the cloud sql instance
-gcloud sql instances delete ${MYSQL_INSTANCE}
-
-
-
-bq rm -r -f "liveability"
-
-#Clean up the GCS bucket and its contents.
-gsutil rm -r "gs://${PROJECT_ID}"
-gsutil rb -f "gs://${PROJECT_ID}"
-
-# To remove the service accounts we have.
-gcloud iam service-accounts delete ${SERVICE_ACCOUNT_ID}@${PROJECT_ID}.iam.gserviceaccount.com
 
