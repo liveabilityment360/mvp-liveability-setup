@@ -72,7 +72,7 @@ gcloud sql instances delete ${MYSQL_INSTANCE}
 
 
 
-bq rm "liveability"
+bq rm -r -f "liveability"
 
 #Clean up the GCS bucket and its contents.
 gsutil rm -r "gs://${PROJECT_ID}"
