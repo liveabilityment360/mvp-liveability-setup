@@ -50,10 +50,6 @@ gcloud pubsub topics delete ${DS_PUBSUB_TOPIC}
 #Delete BigQuery dataset
 bq rm -r -f "liveability
 
-#Clean up the GCS bucket and its contents.
-gsutil rm -r "gs://${PROJECT_ID}"
-gsutil rb -f "gs://${PROJECT_ID}"
-
 # To remove the service accounts we have.
 gcloud iam service-accounts delete ${SERVICE_ACCOUNT_ID}@${PROJECT_ID}.iam.gserviceaccount.com
 
@@ -81,3 +77,9 @@ gcloud services disable composer.googleapis.com --force
 
 # Delete the cloud sql instance
 gcloud sql instances delete ${MYSQL_INSTANCE}
+
+
+#Clean up the GCS bucket and its contents.
+gsutil rm -r "gs://${PROJECT_ID}"
+gsutil rb -f "gs://${PROJECT_ID}"
+
