@@ -68,8 +68,8 @@ gcloud services disable datastream.googleapis.com --force
 gcloud services disable pubsub.googleapis.com --force 
 #cloudbuild
 gcloud services disable cloudbuild.googleapis.com --force 
-gcloud services disable compute.googleapis.com --force 
-gcloud services disable iam.googleapis.com --force 
+#gcloud services disable compute.googleapis.com --force 
+#gcloud services disable iam.googleapis.com --force 
 #cloud composer
 gcloud services disable composer.googleapis.com --force 
 
