@@ -45,8 +45,7 @@ gsutil notification delete projects/_/buckets/${PROJECT_ID}/notificationConfigs/
 gcloud pubsub subscriptions delete ${DS_PUBSUB_SUBSCRIPTION}
 gcloud pubsub topics delete ${DS_PUBSUB_TOPIC}
 
-# Delete the cloud sql instance
-gcloud sql instances delete ${MYSQL_INSTANCE}
+
 
 #Delete BigQuery dataset
 bq rm -r -f "liveability
@@ -80,4 +79,5 @@ gcloud services disable iam.googleapis.com --force
 #cloud composer
 gcloud services disable composer.googleapis.com --force 
 
-
+# Delete the cloud sql instance
+gcloud sql instances delete ${MYSQL_INSTANCE}
