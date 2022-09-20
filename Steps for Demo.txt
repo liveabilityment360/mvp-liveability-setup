@@ -1,6 +1,6 @@
 #1.Open cloud shell  and export and set the project
 
-export PROJECT_ID="liveability-final"   
+export PROJECT_ID="proj-liveability-ment360"   
 gcloud config set project ${PROJECT_ID}
 git clone https://github.com/liveabilityment360/mvp-liveability-setup
 
