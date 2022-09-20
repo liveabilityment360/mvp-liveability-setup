@@ -38,8 +38,6 @@ gcloud datastream streams delete ${DS_MYSQL_GCS_NAME} --location=${LOCATION}
 gcloud datastream connection-profiles delete ${GCS_CONN_PROFILE} --location=${LOCATION}
 gcloud datastream connection-profiles delete ${MYSQL_CONN_PROFILE} --location=${LOCATION}
 
-# Removes the pubsub notification on GCS bucket.
-gsutil notification delete projects/_/buckets/${PROJECT_ID}/notificationConfigs/*
 
 # Removes the pubsub topic and subsctiption.
 gcloud pubsub subscriptions delete ${DS_PUBSUB_SUBSCRIPTION}
@@ -81,7 +79,9 @@ gcloud storage rm --recursive "gs://${PROJECT_ID}"
 
 
 # Delete the cloud sql instance
+
 gcloud sql instances delete ${MYSQL_INSTANCE}
+
 
 
 
