@@ -1,5 +1,5 @@
 # Export the proj and location
-export PROJECT_ID="liveability-final"
+export PROJECT_ID="proj-liveability-ment360"
 export LOCATION="australia-southeast1"
 
 # Sets the project in the shell
