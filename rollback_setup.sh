@@ -75,11 +75,13 @@ gcloud services disable iam.googleapis.com --force
 #cloud composer
 gcloud services disable composer.googleapis.com --force 
 
+
+#Clean up the GCS bucket and its contents.
+gcloud storage rm --recursive "gs://${PROJECT_ID}"
+
+
 # Delete the cloud sql instance
 gcloud sql instances delete ${MYSQL_INSTANCE}
 
 
-#Clean up the GCS bucket and its contents.
-gsutil rm -r "gs://${PROJECT_ID}"
-gsutil rb -f "gs://${PROJECT_ID}"
 
