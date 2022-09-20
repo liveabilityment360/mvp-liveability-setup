@@ -1,5 +1,5 @@
 {
-    "GCS_BUCKET": "gs://liveability-final",
+    "GCS_BUCKET": "gs://proj-liveability-ment360",
     "LOCATION": "australia-southeast1",
-    "PROJECT_ID": "liveability-final"
+    "PROJECT_ID": "proj-liveability-ment360"
 }
