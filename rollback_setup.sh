@@ -1,5 +1,5 @@
 # Scripts for rolling back the project resources.
-export PROJECT_ID="liveability-final"
+export PROJECT_ID="proj-liveability-ment360"
 # Sets the project in the shell
 gcloud config set project ${PROJECT_ID}
 
