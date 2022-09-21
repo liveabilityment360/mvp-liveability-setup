@@ -13,7 +13,7 @@ gce_region= models.Variable.get("LOCATION")
 
 default_args = {
     # Tell airflow to start one day ago, so that it runs as soon as you upload it
-    "start_date": days_ago(1),
+    #"start_date": days_ago(1),
     "dataflow_default_options": {
         "project": project_id,
         # Set to your zone
@@ -34,13 +34,13 @@ with models.DAG(
     schedule_interval=datetime.timedelta(days=1),  # Override to match your needs
 ) as dag:
 
-    start_initial_load = DummyOperator(
-        task_id='start_initial_load',
+    read_from_cloudstorage = DummyOperator(
+        task_id='read_from_cloudstorage',
         dag=dag
     )
 
-    finish_initial_load = DummyOperator(
-        task_id='finish_initial_load',
+    write_to_bigquery = DummyOperator(
+        task_id='write_to_bigquery',
         dag=dag
     )
 
@@ -58,9 +58,9 @@ bigQueryLoadingTemporaryDirectory=PATH_TO_TEMP_DIR_ON_GCS
     
     """
 
-    start_template_job = DataflowTemplatedJobStartOperator(
+    run_dataflow_pipeline = DataflowTemplatedJobStartOperator(
         # The task id of your job
-        task_id="dataflow_operator_csv_gcs_to_bq",
+        task_id="run_dataflow_pipeline",
         # https://cloud.google.com/dataflow/docs/guides/templates/provided-batch#gcstexttobigquery
         template="gs://dataflow-templates/latest/GCS_Text_to_BigQuery",
         location=gce_region,
@@ -76,6 +76,6 @@ bigQueryLoadingTemporaryDirectory=PATH_TO_TEMP_DIR_ON_GCS
         dag=dag
     )
 
-    start_initial_load >> start_template_job >> finish_initial_load
+     read_from_cloudstorage >> run_dataflow_pipeline >> write_to_bigquery
     
   
