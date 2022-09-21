@@ -35,12 +35,12 @@ with models.DAG(
 ) as dag:
 
     read_from_cloudstorage = DummyOperator(
-        task_id='start_initial_load',
+        task_id='read_from_cloudstorage',
         dag=dag
     )
 
     write_to_bigquery = DummyOperator(
-        task_id='finish_initial_load',
+        task_id='write_to_bigquery',
         dag=dag
     )
 
@@ -60,7 +60,7 @@ bigQueryLoadingTemporaryDirectory=PATH_TO_TEMP_DIR_ON_GCS
 
     run_dataflow_pipeline = DataflowTemplatedJobStartOperator(
         # The task id of your job
-        task_id="dataflow_operator_csv_gcs_to_bq",
+        task_id="dataflow_childcare_data",
         # https://cloud.google.com/dataflow/docs/guides/templates/provided-batch#gcstexttobigquery
         template="gs://dataflow-templates/latest/GCS_Text_to_BigQuery",
         location=gce_region,
