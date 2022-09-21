@@ -60,7 +60,7 @@ bigQueryLoadingTemporaryDirectory=PATH_TO_TEMP_DIR_ON_GCS
 
     run_dataflow_pipeline = DataflowTemplatedJobStartOperator(
         # The task id of your job
-        task_id="run_dataflow_pipeline",
+        task_id="dataflow_sports_data",
         # https://cloud.google.com/dataflow/docs/guides/templates/provided-batch#gcstexttobigquery
         template="gs://dataflow-templates/latest/GCS_Text_to_BigQuery",
         location=gce_region,
