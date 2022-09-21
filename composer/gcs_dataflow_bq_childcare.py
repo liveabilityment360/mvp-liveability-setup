@@ -28,7 +28,7 @@ default_args = {
 # DAG object.
 with models.DAG(
     # The id you will see in the DAG airflow page
-    "dag_to_load_childcare",
+    "dag_to_load_childcare_data",
     default_args=default_args,
     # The interval with which to schedule the DAG
     schedule_interval=datetime.timedelta(days=1),  # Override to match your needs
