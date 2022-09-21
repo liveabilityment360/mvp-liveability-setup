@@ -28,18 +28,18 @@ default_args = {
 # DAG object.
 with models.DAG(
     # The id you will see in the DAG airflow page
-    "composer_dataflow_dag_hospitals",
+    "dag_to_load_hospital_data",
     default_args=default_args,
     # The interval with which to schedule the DAG
     schedule_interval=datetime.timedelta(days=1),  # Override to match your needs
 ) as dag:
 
-    start_initial_load = DummyOperator(
+    read_from_cloudstorage = DummyOperator(
         task_id='start_initial_load',
         dag=dag
     )
 
-    finish_initial_load = DummyOperator(
+    write_to_bigquery = DummyOperator(
         task_id='finish_initial_load',
         dag=dag
     )
@@ -58,7 +58,7 @@ bigQueryLoadingTemporaryDirectory=PATH_TO_TEMP_DIR_ON_GCS
     
     """
 
-    start_template_job = DataflowTemplatedJobStartOperator(
+    run_dataflow_pipeline = DataflowTemplatedJobStartOperator(
         # The task id of your job
         task_id="dataflow_operator_csv_gcs_to_bq",
         # https://cloud.google.com/dataflow/docs/guides/templates/provided-batch#gcstexttobigquery
@@ -76,6 +76,6 @@ bigQueryLoadingTemporaryDirectory=PATH_TO_TEMP_DIR_ON_GCS
         dag=dag
     )
 
-    start_initial_load >> start_template_job >> finish_initial_load
+   read_from_cloudstorage >> run_dataflow_pipeline >> write_to_bigquery
     
   
