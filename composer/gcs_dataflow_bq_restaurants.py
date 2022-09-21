@@ -13,7 +13,7 @@ gce_region= models.Variable.get("LOCATION")
 
 default_args = {
     # Tell airflow to start one day ago, so that it runs as soon as you upload it
-    #"start_date": days_ago(1),
+    "start_date": days_ago(1),
     "dataflow_default_options": {
         "project": project_id,
         # Set to your zone
@@ -76,6 +76,6 @@ bigQueryLoadingTemporaryDirectory=PATH_TO_TEMP_DIR_ON_GCS
         dag=dag
     )
 
-   read_from_cloudstorage >> run_dataflow_pipeline >> write_to_bigquery
+    read_from_cloudstorage >> run_dataflow_pipeline >> write_to_bigquery
     
   
