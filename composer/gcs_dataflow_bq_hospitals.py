@@ -13,7 +13,7 @@ gce_region= models.Variable.get("LOCATION")
 
 default_args = {
     # Tell airflow to start one day ago, so that it runs as soon as you upload it
-    "start_date": days_ago(1),
+    #"start_date": days_ago(1),
     "dataflow_default_options": {
         "project": project_id,
         # Set to your zone
