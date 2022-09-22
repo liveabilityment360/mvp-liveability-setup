@@ -91,5 +91,5 @@ bq --location=${LOCATION} mk \
 gsutil cp ../data/* gs://${PROJECT_ID}/data/batch_data/
 gsutil cp ../ddl/* gs://${PROJECT_ID}/ddl/
 gsutil cp ../comp_schema/* gs://${PROJECT_ID}/data/comp_schema/
-gsutil cp ../composer/* gs://${PROJECT_ID}/composer/DAGs/             # Moving all the composer DAGs files.
+gsutil cp ../composer/DAGs/* gs://${PROJECT_ID}/composer/DAGs/             # Moving all the composer DAGs files.
 gsutil cp key.json gs://${PROJECT_ID}/credentials/key.json
