@@ -1,7 +1,7 @@
 
 steps:
-- id: 'DAG Copy'
-  name: 'Composer'
+- id: 'branch name'
+  name: 'alpine'
   entrypoint: 'sh'
   args:
   - '-c'
